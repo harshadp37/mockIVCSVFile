@@ -24,7 +24,9 @@
 }
 
 .mainDiv .mainHeader form{
-    border: 2px solid white;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
     border-radius: 5px;
     padding: 10px;
     display: flex;
@@ -106,6 +108,7 @@
     justify-content: center;
     border-bottom: 20px;
     padding-bottom: 20px;
+    position: relative;
 }
 
 .mainDiv .fileDetails .filter{
@@ -121,6 +124,24 @@
     font-weight: 500;
 }
 
+.mainDiv .fileDetails .filterInfo{
+    color: #3fec3f;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.mainDiv .fileDetails .filterInfo::before{
+    content: '--- ';
+    color: inherit;
+}
+
+.mainDiv .fileDetails .filterInfo::after{
+    content: ' ---';
+    color: inherit;
+}
+
 .mainDiv .fileDetails table{
     width: 90%;
     border: 2px solid black;
@@ -128,6 +149,14 @@
     border-spacing: 0;
     border-collapse: collapse;
     text-align: center;
+}
+
+.mainDiv .fileDetails table thead .asc::after{
+    content: '(Asc)';
+}
+
+.mainDiv .fileDetails table thead .desc::after{
+    content: '(Desc)';
 }
 
 .mainDiv .fileDetails table th{
@@ -140,6 +169,14 @@
     border: 2px solid black;
     padding: 10px;
     font-size: 1.1rem;
+}
+
+.mainDiv .fileDetails .filename{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .error{

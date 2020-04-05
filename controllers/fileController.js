@@ -35,7 +35,7 @@ module.exports.getDetails = async (req, res)=>{
         .pipe(csv())
         .on('data', (data) => results.push(data))
         .on('end', () => {
-            return res.render('home', {fileDetails: {keys: Object.keys(results[0]), content: results}});
+            return res.render('home', {fileDetails: {name:file.originalFileName, keys: Object.keys(results[0]), content: results}});
         });
     } catch (e) {
         console.log("Error while getting details of file.")
