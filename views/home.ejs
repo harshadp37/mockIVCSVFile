@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSV DATA</title>
+    <link rel='stylesheet' type='text/css' href='/css/home.css'>
+</head>
+
+<body>
+    <div class="mainDiv">
+        <div class="mainHeader">
+            <form method="POST" action="/file/upload" enctype="multipart/form-data">
+                <input type="file" name="csvFile" accept=".csv" required />
+                <button type="Submit">Upload</button>
+            </form>
+            <a href="/" type="button" class="btnList" style="text-decoration: none;">Show List</a>
+        </div>
+
+        <% if(locals.error){ %>
+        <div class="error">
+            <span><%= locals.error %></span>
+        </div>
+        <% } %>
+
+        <% if(locals.fileLists){ %>
+        <div class="listOfFiles">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>created At</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% for(var i=0; i<locals.fileLists.length; i++){ %>
+                    <tr>
+                        <td><%= fileLists[i].originalFileName %></td>
+                        <td><%= fileLists[i].createdAt.toLocaleString() %></td>
+                        <td><a href="/file/<%= fileLists[i]._id %>"  type="button" class="btnList" style="text-decoration: none;">Get Details</a></td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+        <% } %>
+
+        <% if(locals.fileDetails){ %>
+        <div class="fileDetails">
+            <table>
+                <thead>
+                    <tr>
+                        <% for(var i=0; i<locals.fileDetails.keys.length; i++){ %>
+                        <th><%= fileDetails.keys[i] %></th>
+                        <% } %>
+                    </tr>
+                </thead>
+                <tbody>
+                <% for(var i=0; i<locals.fileDetails.content.length; i++){ %>
+                    <tr>
+                        <% for(var j=0; j<locals.fileDetails.keys.length; j++){ %>
+                        <td><%= fileDetails.content[i][fileDetails.keys[j]] %></td>
+                        <% } %>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+        <% } %>
+        
+        <!-- <% if(!locals.error && locals.CSVFile){ %>
+        <div class="content">
+            <div class="header">
+                <span><%= locals.CSVFile.Name %></span>
+            </div>
+            <% if(locals.CSVFile.content.length){ %>
+            <table>
+                
+            </table>
+            <% } %>
+        </div>
+        <% } %> -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainDiv{
+    width: 100vw;
+    height: fit-content;
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mainDiv .mainHeader{
+    width: inherit;
+    min-height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainDiv .mainHeader form{
+    border: 2px solid white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainDiv .mainHeader form input{
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mainDiv .mainHeader form button{
+    font-size: 1.1rem;
+    width: 50%;
+    background: palegreen;
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.mainDiv .mainHeader form button:hover{
+    background: #3ff53f;
+}
+
+.mainDiv .mainHeader a{
+    font-size: 1.1rem;
+    width: 120px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #33bed6;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.mainDiv .listOfFiles{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.mainDiv .listOfFiles table{
+    width: 90%;
+    border: 2px solid black;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.mainDiv .listOfFiles table th{
+    border: 2px solid black;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+.mainDiv .listOfFiles table td{
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.mainDiv .fileDetails{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.mainDiv .fileDetails table{
+    width: 90%;
+    border: 2px solid black;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.mainDiv .fileDetails table th{
+    border: 2px solid black;
+    padding: 15px;
+    font-size: 1.3rem;
+}
+
+.mainDiv .fileDetails table td{
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.error{
+    color: white;
+    font-size: 1.2rem;
+    background: #991111;
+    padding: 10px;
+}
