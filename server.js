@@ -27,8 +27,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'assests')));
 
+/* INDEX ROUTE */
 app.use('/', require('./routes/index'));
 
+/* START SERVER */
 app.listen(PORT, ()=>{
     console.log("Server Running on PORT : " + PORT);
 })
